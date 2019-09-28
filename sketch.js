@@ -22,7 +22,7 @@ function updatePoints() {
 }
 
 function setup() {
-	createCanvas(windowWidth - 30, 700);
+	createCanvas(windowWidth - 30, windowHeight - 100);
 	background(51);
 	createP('');
 	createSpan('Enter Number: ')

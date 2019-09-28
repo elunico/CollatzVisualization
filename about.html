@@ -5,9 +5,29 @@
 <head>
   <meta charset="UTF-8">
   <title>About -- Collatz Conjecture</title>
+  <link href="https://fonts.googleapis.com/css?family=Zilla+Slab:400,700&display=swap" rel="stylesheet">
+
+  <style>
+    h1 {
+      margin-left: 15%;
+      margin-right: 15%;
+      font-family: "Helvetica Neue", "Hevletica", "Arial", "Calibri", sans-serif;
+
+    }
+
+    p {
+      font-family: "Zilla Slab", "Rockwell", serif;
+      margin-left: 17%;
+      margin-right: 15%;
+      font-size: 1.2em;
+    }
+  </style>
 </head>
 
 <body>
+  <p>
+    <a href='/'>Back</a>
+  </p>
   <h1>What is this?</h1>
   <p>
     This is a prorgram written in <a href="https://p5js.org/">p5.js</a> to explore the
@@ -30,15 +50,16 @@
   <p>
     The Collatz function says that for any integer divisible by two, return that integer divided by 2;
     For all other integers return 1 more than 3 times that integer. In a program, such as Javascript,
-    it would look something like this
+    it would look something like this<br>
+    <br>
     <code>
-      function collatz(n) {
-        if (n % 2 === 0) {
-          return n / 2;
-        } else {
-          return (3 * n) + 1;
-        }
-      }
+      function collatz(n) {<br>
+        &nbsp;if (n % 2 === 0) {<br>
+          &nbsp;&nbsp;return n / 2;<br>
+          &nbsp;} else {<br>
+            &nbsp;&nbsp;return (3 * n) + 1;<br>
+            &nbsp;}<br>
+      }<br><br>
     </code>
   </p>
   <p>
@@ -70,7 +91,8 @@
 
   <h1>This is pretty cool!</h1>
   <p>
-    If you liked this you can find the code to it <a href="">here</a> on my Github.
+    If you liked this you can find the code to it <a href="https://github.com/elunico/CollatzVisualization">here</a> on
+    my Github.
   </p>
   <p>
     Please note that this was inspired by a as-of-yet-not-done Coding Challenge
