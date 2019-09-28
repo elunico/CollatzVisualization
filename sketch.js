@@ -33,14 +33,18 @@ function setup() {
 	currentSpan = createSpan(numberInput.value());
 	let about = createP();
 	about.html('<a href="/about.html">Confused?</a>');
+	colorMode(HSB);
+
 }
 
 let markWidth = 15;
 let markPad = 5;
 
 function draw() {
+	noStroke();
+
 	currentSpan.html(`${numberInput.value()}`);
-	background(21);
+	background(0, 0, 10);
 	if (points.length > 0) {
 		// limit max size but shrink if we run out of space
 		if ((width / (markWidth + markPad)) < points.length) {
@@ -67,9 +71,13 @@ function draw() {
 		let x = 100;
 		for (let i = 0; i < points.length; i++) {
 			let y = map(points[i], 0, max, height - 30, 30);
-			ellipse(x, y, markWidth, markWidth);
-			x += (markWidth + markPad);
+			fill(map(x, 30, height - 30, 1, 255), 255, 255);
+			let w = map(y, 30, height - 30, markWidth * 5, markWidth / 2);
+			ellipse(x, y, w, w);
+			x += (w + markPad);
+
 		}
+		// colorMode(RGB);
 	}
 
 	// reset to default for spacing calculation
