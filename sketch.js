@@ -39,6 +39,7 @@ let markWidth = 15;
 let markPad = 5;
 
 function draw() {
+	let prevX, prevY;
 	currentSpan.html(`${numberInput.value()}`);
 	background(21);
 	if (points.length > 0) {
@@ -56,6 +57,7 @@ function draw() {
 		let max = points.reduce((pv, cv) => pv > cv ? pv : cv);
 
 		for (let i = 0; i <= 8; i++) {
+			noStroke();
 			fill(255);
 			textAlign(CENTER, CENTER);
 			textSize(28);
@@ -67,7 +69,14 @@ function draw() {
 		let x = 100;
 		for (let i = 0; i < points.length; i++) {
 			let y = map(points[i], 0, max, height - 30, 30);
+			if (prevX && prevY) {
+				stroke(255);
+				strokeWeight(2);
+				line(prevX, prevY, x, y);
+			}
 			ellipse(x, y, markWidth, markWidth);
+			prevX = x;
+			prevY = y;
 			x += (markWidth + markPad);
 		}
 	}
