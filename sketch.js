@@ -32,7 +32,7 @@ function setup() {
 	numberInput.input(updatePoints);
 	currentSpan = createSpan(numberInput.value());
 	let about = createP();
-	about.html('<a href="/about.html">Confused?</a>');
+	about.html('<a href="/CollatzVisualization/about.html">Confused?</a>');
 }
 
 let markWidth = 15;
